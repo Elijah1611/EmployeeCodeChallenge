@@ -8,7 +8,8 @@
 
 <h1>Employee Details</h1>
 
-<SfGrid DataSource="@Employees">
+<SfGrid DataSource="@Employees" AllowPaging="true" AllowSorting="true" AllowFiltering="true">
+    <GridPageSettings PageSize="10"></GridPageSettings>
     <GridColumns>
         <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
         <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
