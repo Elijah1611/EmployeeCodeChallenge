@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataApp.API", "EmployeeDataApp.API\EmployeeDataApp.API.csproj", "{3ED462E1-358A-4DB1-BE83-502C5B361D7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataApp.Blazor", "EmployeeDataApp.Blazor\EmployeeDataApp.Blazor.csproj", "{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3ED462E1-358A-4DB1-BE83-502C5B361D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED462E1-358A-4DB1-BE83-502C5B361D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED462E1-358A-4DB1-BE83-502C5B361D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED462E1-358A-4DB1-BE83-502C5B361D7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
