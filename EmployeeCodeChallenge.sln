@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataApp.API", "Empl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataApp.Blazor", "EmployeeDataApp.Blazor\EmployeeDataApp.Blazor.csproj", "{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataApp.Entities", "EmployeeDataApp.Entities\EmployeeDataApp.Entities.csproj", "{20FC7C33-8AD2-4629-836B-5E22884CFE79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86CB8E12-1FC5-4B4A-B892-1F152A17E86A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FC7C33-8AD2-4629-836B-5E22884CFE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FC7C33-8AD2-4629-836B-5E22884CFE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FC7C33-8AD2-4629-836B-5E22884CFE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FC7C33-8AD2-4629-836B-5E22884CFE79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

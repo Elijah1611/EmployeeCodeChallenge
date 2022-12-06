@@ -1,4 +1,7 @@
-using EmployeeDataApp.Blazor.Entities;
+using AutoMapper;
+using EmployeeDataApp.API.DTOs;
+using EmployeeDataApp.API.Repositories;
+using EmployeeDataApp.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeDataApp.API.Controllers;
@@ -7,25 +10,19 @@ namespace EmployeeDataApp.API.Controllers;
 [Route("api/employees")]
 public class EmployeeController : ControllerBase
 {
-    [HttpGet]
-    public ActionResult<IEnumerable<Employee>> GetAllEmployees()
+    private readonly IEmployeeRepository _employeeRepository;
+    private readonly IMapper _mapper;
+
+    public EmployeeController(IEmployeeRepository employeeRepository, IMapper mapper)
     {
-        return Ok(Enumerable.Range(1, 50).Select(index => new Employee()
-            {
-                EmployeeId = index,
-                FirstName = Faker.Name.First(),
-                LastName = Faker.Name.Last(),
-                Email = Faker.Internet.Email(),
-                PhoneNumber = Faker.Phone.Number(),
-                Address = new Address()
-                {
-                    Street = Faker.Address.StreetAddress(),
-                    City = Faker.Address.City(),
-                    State = Faker.Address.UsState(),
-                    ZipCode = Faker.Address.ZipCode(),
-                    Country = "United States of America"
-                }
-            })
-            .ToArray());
+        _employeeRepository = employeeRepository;
+        _mapper = mapper;
+    }
+    
+    [HttpGet]
+    public IActionResult GetAllEmployees()
+    {
+        var employeeEntities = _employeeRepository.GetAllEmployees();
+        return Ok(_mapper.Map<IEnumerable<EmployeeDto>>(employeeEntities));
     }
 }

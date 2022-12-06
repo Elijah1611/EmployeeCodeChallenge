@@ -1,4 +1,4 @@
-namespace EmployeeDataApp.Blazor.Entities;
+namespace EmployeeDataApp.Entities;
 
 public class Address
 {

@@ -1,11 +1,11 @@
-namespace EmployeeDataApp.Blazor.Entities;
+namespace EmployeeDataApp.API.DTOs;
 
-public class Employee
+public class EmployeeDto
 {
     public int EmployeeId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
-    public Address Address { get; set; }
+    public AddressDto Address { get; set; }
 }

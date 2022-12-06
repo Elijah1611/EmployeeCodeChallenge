@@ -1,9 +1,36 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@using EmployeeDataApp.Blazor.Services
+@using EmployeeDataApp.Entities
+@inject HttpClient Http
 
-<h1>Hello, world!</h1>
+<PageTitle>Employee Details</PageTitle>
 
-Welcome to your new app.
+<h1>Employee Details</h1>
 
-<SurveyPrompt Title="How is Blazor working for you?"/>
+<SfGrid DataSource="@Employees">
+    <GridColumns>
+        <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
+        <GridColumn Field=@nameof(Employee.Email) HeaderText="Email"></GridColumn>
+        <GridColumn Field=@nameof(Employee.PhoneNumber) HeaderText="Phone Number"></GridColumn>
+        @* <GridColumn Field=@nameof(Employee.Address.Street) HeaderText="Street"></GridColumn> *@
+        @* <GridColumn Field=@nameof(Employee.Address.City) HeaderText="City"></GridColumn> *@
+        @* <GridColumn Field=@nameof(Employee.Address.State) HeaderText="State"></GridColumn> *@
+        @* <GridColumn Field=@nameof(Employee.Address.ZipCode) HeaderText="Zip Code"></GridColumn> *@
+        @* <GridColumn Field=@nameof(Employee.Address.Country) HeaderText="Country"></GridColumn> *@
+    </GridColumns>
+</SfGrid>
+
+@code {
+
+    private IEnumerable<Employee>? Employees;
+
+    [Inject]
+    public IEmployeeService EmployeeService { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = (await EmployeeService.GetAllEmployees()).ToList();
+    }
+}

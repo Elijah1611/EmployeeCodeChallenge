@@ -7,12 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
         <PackageReference Include="Faker.Net" Version="2.0.154" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="DTOs" />
+      <ProjectReference Include="..\EmployeeDataApp.Entities\EmployeeDataApp.Entities.csproj" />
     </ItemGroup>
 
 </Project>
