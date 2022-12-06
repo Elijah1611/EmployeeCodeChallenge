@@ -2,21 +2,25 @@
 
 @using EmployeeDataApp.Blazor.Services
 @using EmployeeDataApp.Entities
-@inject HttpClient Http
+@using Syncfusion.Blazor.Data
 
 <PageTitle>Employee Details</PageTitle>
 
 <h1>Employee Details</h1>
 
 <SfGrid DataSource="@Employees" AllowPaging="true" AllowSorting="true" AllowFiltering="true">
-    @* <SfDataManager Url="https://localhost:7250/api/employees?adapter=true" Adaptor="Adaptors.JsonAdapter"></SfDataManager> *@
+    <SfDataManager Json="@Employees" Adaptor="Adaptors.JsonAdaptor"></SfDataManager>
     <GridPageSettings PageSize="10"></GridPageSettings>
     <GridColumns>
         <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
         <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
         <GridColumn Field=@nameof(Employee.Email) HeaderText="Email"></GridColumn>
         <GridColumn Field=@nameof(Employee.PhoneNumber) HeaderText="Phone Number"></GridColumn>
-        <GridColumn Field=@nameof(Employee.AddressText) HeaderText="Street Address"></GridColumn>
+        <GridColumn Field=@nameof(Employee.StreetAddress) HeaderText="Street Address"></GridColumn>
+        <GridColumn Field=@nameof(Employee.City) HeaderText="City"></GridColumn>
+        <GridColumn Field=@nameof(Employee.State) HeaderText="State"></GridColumn>
+        <GridColumn Field=@nameof(Employee.ZipCode) HeaderText="Zip Code"></GridColumn>
+        <GridColumn Field=@nameof(Employee.Country) HeaderText="Country"></GridColumn>
     </GridColumns>
 </SfGrid>
 
@@ -27,7 +31,7 @@
 
     [Inject]
     public IEmployeeService EmployeeService { get; set; }
-    
+
     protected override async Task OnInitializedAsync()
     {
         Employees = (await EmployeeService.GetAllEmployees()).ToList();

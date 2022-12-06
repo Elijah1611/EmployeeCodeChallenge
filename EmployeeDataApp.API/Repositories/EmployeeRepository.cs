@@ -13,14 +13,11 @@ public class EmployeeRepository : IEmployeeRepository
                 LastName = Faker.Name.Last(),
                 Email = Faker.Internet.Email(),
                 PhoneNumber = Faker.Phone.Number(),
-                Address = new Address()
-                {
-                    Street = Faker.Address.StreetAddress(),
-                    City = Faker.Address.City(),
-                    State = Faker.Address.UsState(),
-                    ZipCode = Faker.Address.ZipCode(),
-                    Country = "United States of America"
-                }
+                StreetAddress = Faker.Address.StreetAddress(),
+                City = Faker.Address.City(),
+                State = Faker.Address.UsState(),
+                ZipCode = Faker.Address.ZipCode(),
+                Country = "United States of America"
             })
             .ToArray();
     }
