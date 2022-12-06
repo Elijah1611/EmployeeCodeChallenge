@@ -9,23 +9,21 @@
 <h1>Employee Details</h1>
 
 <SfGrid DataSource="@Employees" AllowPaging="true" AllowSorting="true" AllowFiltering="true">
+    @* <SfDataManager Url="https://localhost:7250/api/employees?adapter=true" Adaptor="Adaptors.WebApiAdaptor"></SfDataManager> *@
     <GridPageSettings PageSize="10"></GridPageSettings>
     <GridColumns>
         <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>
         <GridColumn Field=@nameof(Employee.LastName) HeaderText="Last Name"></GridColumn>
         <GridColumn Field=@nameof(Employee.Email) HeaderText="Email"></GridColumn>
         <GridColumn Field=@nameof(Employee.PhoneNumber) HeaderText="Phone Number"></GridColumn>
-        @* <GridColumn Field=@nameof(Employee.Address.Street) HeaderText="Street"></GridColumn> *@
-        @* <GridColumn Field=@nameof(Employee.Address.City) HeaderText="City"></GridColumn> *@
-        @* <GridColumn Field=@nameof(Employee.Address.State) HeaderText="State"></GridColumn> *@
-        @* <GridColumn Field=@nameof(Employee.Address.ZipCode) HeaderText="Zip Code"></GridColumn> *@
-        @* <GridColumn Field=@nameof(Employee.Address.Country) HeaderText="Country"></GridColumn> *@
+        <GridColumn Field=@nameof(Employee.AddressText) HeaderText="Street Address"></GridColumn>
     </GridColumns>
 </SfGrid>
 
 @code {
 
     private IEnumerable<Employee>? Employees;
+    private IEnumerable<string>? Addresses;
 
     [Inject]
     public IEmployeeService EmployeeService { get; set; }

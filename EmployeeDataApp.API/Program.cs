@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "EmployDataApp", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "Employee Data App", Version = "v1" });
 });
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();

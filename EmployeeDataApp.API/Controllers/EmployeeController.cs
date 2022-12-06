@@ -20,9 +20,16 @@ public class EmployeeController : ControllerBase
     }
     
     [HttpGet]
-    public IActionResult GetAllEmployees()
+    public IActionResult GetAllEmployees([FromQuery] bool adapter)
     {
         var employeeEntities = _employeeRepository.GetAllEmployees();
+        
+        if (adapter)
+        {
+            var employees = _mapper.Map<IEnumerable<EmployeeDto>>(employeeEntities);
+            return Ok(new { result = employees, count = employees.Count() });
+        }
+        
         return Ok(_mapper.Map<IEnumerable<EmployeeDto>>(employeeEntities));
     }
 }
