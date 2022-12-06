@@ -9,7 +9,7 @@
 <h1>Employee Details</h1>
 
 <SfGrid DataSource="@Employees" AllowPaging="true" AllowSorting="true" AllowFiltering="true">
-    @* <SfDataManager Url="https://localhost:7250/api/employees?adapter=true" Adaptor="Adaptors.WebApiAdaptor"></SfDataManager> *@
+    @* <SfDataManager Url="https://localhost:7250/api/employees?adapter=true" Adaptor="Adaptors.JsonAdapter"></SfDataManager> *@
     <GridPageSettings PageSize="10"></GridPageSettings>
     <GridColumns>
         <GridColumn Field=@nameof(Employee.FirstName) HeaderText="First Name"></GridColumn>

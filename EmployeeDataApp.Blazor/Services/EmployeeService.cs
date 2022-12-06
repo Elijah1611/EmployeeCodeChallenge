@@ -1,4 +1,4 @@
-using System.Text.Json;
+using System.Net.Http.Json;
 using EmployeeDataApp.Entities;
 
 namespace EmployeeDataApp.Blazor.Services;
@@ -16,7 +16,6 @@ public class EmployeeService : IEmployeeService
     
     public async Task<IEnumerable<Employee>> GetAllEmployees()
     {
-        return await JsonSerializer.DeserializeAsync<IEnumerable<Employee>>(await _httpClient.GetStreamAsync("api/employees"),
-            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }) ?? Array.Empty<Employee>();
+        return await _httpClient.GetFromJsonAsync<IEnumerable<Employee>>("api/employees") ?? Array.Empty<Employee>();
     }
 }
